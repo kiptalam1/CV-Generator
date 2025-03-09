@@ -1,0 +1,37 @@
+* {
+    /* border: 1px solid white; */
+
+}
+.header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    --blue-color:  #646cff;;
+}
+.cv-icon {
+    display: flex;
+    align-items: center;
+    justify-content: space-center;
+    gap: 40px;
+    padding: 0 auto;
+    /* margin-bottom: 0; */
+}
+.cv-icon img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid var(--blue-color)
+}
+.cv-icon h1 {
+    font-size: 3em;
+}
+.header-container p {
+    font-size: 1.4em;
+    font-style: italic;
+    margin-top: 0;
+}
+.header-container hr {
+    width: 90%;
+    border: 0.5px solid  var(--blue-color);
+}

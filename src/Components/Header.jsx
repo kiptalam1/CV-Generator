@@ -1,8 +1,12 @@
 export default function Header () {
     return (
         <header className="header-container">
-            <h1>CV Generator App</h1>
-            <p>Generate your CV quickly with ease</p>
+            <div className="cv-icon">
+                <img src="src\Assets\cvIcon.webp" alt="cv icon" />
+                <h1>CV Generator App</h1>
+            </div>
+            <p>Generate your Curriculum Vitae with ease.</p>
+            <hr/>
         </header>
     )
 }
