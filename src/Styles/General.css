@@ -18,7 +18,7 @@
     align-items: center;
 }
 .general-form .form-group label {
-    text-align: right;
+    text-align: left;
     width: 150px;
 }
 .general-form .form-group input {
