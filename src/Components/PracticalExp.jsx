@@ -5,9 +5,10 @@ export default function Experience ({ data, handleChange, isEditing }) {
 
     return (
         <div className="section"> 
-                <h3>Practical Experience</h3>
                 {isEditing ? (
             <form className="exp-form">
+                <h3>Practical Experience</h3>
+
                 <div className="form-group">
                     <label htmlFor="company">Company:</label>
                     <input type="text" name="company" id="company" onChange={handleChange} value={data.company} />
@@ -24,13 +25,14 @@ export default function Experience ({ data, handleChange, isEditing }) {
                 </div>
 
                 <div className="form-group">
-                    <label htmlFor="responsibilities">Responsibilities</label>
+                    <label htmlFor="responsibilities">Responsibilities:</label>
                     <textarea id="responsibilities"
                                 onChange={handleChange}
                                 value={data.responsibilities} 
                                 name="responsibilities"
                                 rows={4} 
                                 cols={40}
+                                wrap="soft"
                                 placeholder="Enter your key responsibilities..." />
                 </div>
                 <div className="date-group">
@@ -46,11 +48,14 @@ export default function Experience ({ data, handleChange, isEditing }) {
                 </div>
             </form>
             ) : (
-                <div className="details">
-                <p><strong>Name:</strong> {data.firstName} {data.lastName}</p>
-                <p><strong>Email:</strong> {data.email}</p>
-                <p><strong>Phone:</strong> {data.phone}</p>
-            </div>
+                <div class="details">
+                <h2>Experience</h2>
+                <p><strong>Company:</strong>&emsp; <span>{data.company}</span></p>
+                <p><strong>Position:</strong>&emsp; <span>{data.position}</span></p>
+                <p><strong>Responsibilities:</strong>&emsp; <span>{data.responsibilities}</span></p>
+                <p><strong>From:</strong>&emsp; <span>{data.from}</span></p>
+                <p><strong>To:</strong>&emsp; <span>{data.to}</span></p>
+                </div>
             )}
         </div>
     );

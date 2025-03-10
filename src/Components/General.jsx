@@ -4,14 +4,14 @@ export default function GeneralInfo({ data, handleChange, isEditing }) {
     return (
         <div className='section' >
 
-            <h3>Personal Information</h3>
 
             {isEditing ? (
             <form className='general-form' >
+            <h3>Personal Information</h3>
 
             <div className='form-group'>
                 <label htmlFor='first-name'>First Name: </label>
-                <input type='text' name='firstName' id="first-name" value={data.firstName} onChange={handleChange} />
+                <input type='text' name='firstName' id="first-name" value={data.firstName} onChange={handleChange} required />
             </div>
 
             <div className='form-group'>
@@ -31,9 +31,10 @@ export default function GeneralInfo({ data, handleChange, isEditing }) {
         </form>
         ): (
             <div className="details">
-                <p><strong>Name:</strong> {data.firstName} {data.lastName}</p>
-                <p><strong>Email:</strong> {data.email}</p>
-                <p><strong>Phone:</strong> {data.phone}</p>
+                <h2>Personal Information</h2>
+                <p><strong>Name:</strong>&emsp; {data.firstName} {data.lastName}</p>
+                <p><strong>Email:</strong>&emsp; {data.email}</p>
+                <p><strong>Phone:</strong>&emsp; {data.phone}</p>
             </div>
 
         )}

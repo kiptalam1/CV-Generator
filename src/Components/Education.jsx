@@ -4,9 +4,9 @@ export default function Education ({ data, handleChange, isEditing }) {
     
     return (
         <div className='section'>
-            <h3>School Information</h3>
             {isEditing ? (
             <form className="edu-form">
+            <h3>Education Information</h3>
                 <div className="form-group">
                     <label htmlFor="school">School:</label>
                     <input type="text" name="school" id="school" value={data.school} onChange={handleChange} />
@@ -29,9 +29,10 @@ export default function Education ({ data, handleChange, isEditing }) {
             </form>
             ) : (
                 <div className="details">
-                <p><strong>Name:</strong> {data.firstName} {data.lastName}</p>
-                <p><strong>Email:</strong> {data.email}</p>
-                <p><strong>Phone:</strong> {data.phone}</p>
+                <h2>Education</h2>
+                <p><strong>School:</strong>&emsp; {data.school}</p>
+                <p><strong>Title:</strong>&emsp; {data.title}</p>
+                <p><strong>Date:</strong>&emsp; {data.date}</p>
             </div>
             )}
         </div>

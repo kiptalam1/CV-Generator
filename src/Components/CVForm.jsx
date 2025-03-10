@@ -1,12 +1,14 @@
 import GeneralInfo from './General.jsx';
 import Education from './Education.jsx';
 import Experience from './PracticalExp.jsx';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 
 export default function CVForm() {
     const [isEditing, setIsEditing] = useState(true);
-    const [formData, setFormData] = useState({
+    const [formData, setFormData] = useState(() => {
+        const savedData = JSON.parse(localStorage.getItem("cvData"));
+        return savedData || {
         firstName: "",
         lastName: "",
         email: "",
@@ -19,8 +21,12 @@ export default function CVForm() {
         responsibilities: "",
         from: "",
         to: "",
+        };
     });
-
+// save data to local storage
+useEffect(() => {
+    localStorage.setItem("cvData", JSON.stringify(formData), [formData])
+})
     function handleChange (event) {
         const {name, value} = event.target;
         setFormData((prevInfo) => ({...prevInfo, [name]: value}));
