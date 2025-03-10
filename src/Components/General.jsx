@@ -18,6 +18,8 @@ export default function GeneralInfo() {
 
     return (
         <form className='general-form'>
+            <h3>Personal Information</h3>
+
             <div className='form-group'>
                 <label htmlFor='first-name'>First Name: </label>
                 <input type='text' id="first-name" value={info.firstName} onChange={handleFirstNameInput} />

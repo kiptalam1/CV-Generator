@@ -9,22 +9,23 @@
     --blue-color:  #676ef4;
 
 }
-.form-group {
+.general-form h3 {
+    margin: 0 auto;
+}
+.general-form .form-group {
     display: flex;
     gap: 20px;
     align-items: center;
 }
-.form-group label {
+.general-form .form-group label {
     text-align: right;
     width: 150px;
 }
-.form-group input {
+.general-form .form-group input {
     flex: 1;
-    padding: 5px;
+    padding: 10px;
     width: 300px;
     font-size: 16px;
+    border-radius: 5px; 
+    border: none;
 }
-/* .general-form hr {
-    border: 0.5px solid var(--blue-color);
-    width: 90%;
-} */
