@@ -3,9 +3,9 @@ import './Styles/Header.css';
 import GeneralInfo from './Components/General.jsx';
 import './Styles/General.css';
 import Education from './Components/Education.jsx';
-
-
-
+import './Styles/Education.css';
+import Experience from './Components/PracticalExp.jsx';
+import './Styles/PracticalExp.css';
 
 
 function App() {
@@ -14,6 +14,7 @@ function App() {
             <Header />
             <GeneralInfo />
             <Education />
+            <Experience />
         </>
     )
 }
