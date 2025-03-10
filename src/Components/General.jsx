@@ -1,45 +1,42 @@
-import { useState } from 'react';
 
-export default function GeneralInfo() {
-    const [info, setInfo] = useState({firstName: "", lastName: "", email: "", phone: ""});
-
-    function handleFirstNameInput (event) {
-        setInfo((prevInfo) => ({...prevInfo, firstName: event.target.value}))
-    }
-    function handleLastNameInput (event) {
-        setInfo((prevInfo) => ({...prevInfo, lastName: event.target.value}))
-    }
-    function handleEmailInput (event) {
-        setInfo((prevInfo) => ({...prevInfo, email: event.target.value}))
-    }
-    function handlePhoneInput (event) {
-        setInfo((prevInfo) => ({...prevInfo, phone: event.target.value}))
-    }
-
+export default function GeneralInfo({ data, handleChange, isEditing }) {
+    
     return (
-        <form className='general-form'>
+        <div className='section' >
+
             <h3>Personal Information</h3>
+
+            {isEditing ? (
+            <form className='general-form' >
 
             <div className='form-group'>
                 <label htmlFor='first-name'>First Name: </label>
-                <input type='text' id="first-name" value={info.firstName} onChange={handleFirstNameInput} />
+                <input type='text' name='firstName' id="first-name" value={data.firstName} onChange={handleChange} />
             </div>
 
             <div className='form-group'>
                 <label htmlFor='last-name'>Last Name: </label>
-                <input type='text' id="last-name" value={info.lastName} onChange={handleLastNameInput} />
+                <input type='text' name='lastName' id="last-name" value={data.lastName} onChange={handleChange} />
             </div>
 
             <div className='form-group'>
                 <label htmlFor='email'>Email: </label>
-                <input type='email' id="email" value={info.email} onChange={handleEmailInput} />
+                <input type='email' name='email' id="email" value={data.email} onChange={handleChange} />
             </div>
 
             <div className='form-group'>
                 <label htmlFor='phone-number'>Phone Number: </label>
-                <input type='tel' id="phone-number" value={info.phone} onChange={handlePhoneInput} />
+                <input type='tel' name='phone' id="phone-number" value={data.phone} onChange={handleChange} />
             </div>    
-
         </form>
+        ): (
+            <div className="details">
+                <p><strong>Name:</strong> {data.firstName} {data.lastName}</p>
+                <p><strong>Email:</strong> {data.email}</p>
+                <p><strong>Phone:</strong> {data.phone}</p>
+            </div>
+
+        )}
+        </div>
     );
 }
