@@ -1,0 +1,30 @@
+.general-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin: 20px auto;
+    padding: 10px;
+    font-size: 16px;
+    --blue-color:  #676ef4;
+
+}
+.form-group {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.form-group label {
+    text-align: right;
+    width: 150px;
+}
+.form-group input {
+    flex: 1;
+    padding: 5px;
+    width: 300px;
+    font-size: 16px;
+}
+/* .general-form hr {
+    border: 0.5px solid var(--blue-color);
+    width: 90%;
+} */

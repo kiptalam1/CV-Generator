@@ -17,18 +17,27 @@ export default function GeneralInfo() {
     }
 
     return (
-        <form>
-            <label htmlFor='first-name'>First Name: </label>
-            <input type='text' id="first-name" value={info.firstName} onChange={handleFirstNameInput} />
+        <form className='general-form'>
+            <div className='form-group'>
+                <label htmlFor='first-name'>First Name: </label>
+                <input type='text' id="first-name" value={info.firstName} onChange={handleFirstNameInput} />
+            </div>
 
-            <label htmlFor='last-name'>Last Name: </label>
-            <input type='text' id="last-name" value={info.lastName} onChange={handleLastNameInput} />
+            <div className='form-group'>
+                <label htmlFor='last-name'>Last Name: </label>
+                <input type='text' id="last-name" value={info.lastName} onChange={handleLastNameInput} />
+            </div>
 
-            <label htmlFor='email'>Email: </label>
-            <input type='email' id="email" value={info.email} onChange={handleEmailInput} />
+            <div className='form-group'>
+                <label htmlFor='email'>Email: </label>
+                <input type='email' id="email" value={info.email} onChange={handleEmailInput} />
+            </div>
 
-            <label htmlFor='phone-number'>Phone Number: </label>
-            <input type='phone' id="phone-number" value={info.phone} onChange={handlePhoneInput} />
+            <div className='form-group'>
+                <label htmlFor='phone-number'>Phone Number: </label>
+                <input type='tel' id="phone-number" value={info.phone} onChange={handlePhoneInput} />
+            </div>    
+
         </form>
     );
 }
