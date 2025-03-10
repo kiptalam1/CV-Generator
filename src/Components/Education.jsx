@@ -17,6 +17,7 @@ export default function Education () {
     }
     return (
         <form className="edu-form">
+            <h3>School Information</h3>
             <div className="form-group">
                 <label htmlFor="school">School:</label>
                 <input type="text" id="school" value={education.school} onChange={handleSchoolInput} />
@@ -24,12 +25,16 @@ export default function Education () {
 
             <div className="form-group">
                 <label htmlFor="title">Title:</label>
-                <input type="text" id="title" value={education.title} onChange={handleTitleInput} />
+                <input type="text" id="title" 
+                        value={education.title} 
+                        placeholder="what did you study?"
+                        onChange={handleTitleInput} 
+                        />
             </div>
 
             <div className="form-group">
                 <label htmlFor="date">Date:</label>
-                <input type="text" id="date" value={education.date} onChange={handleDateInput} />
+                <input type="date" id="date" value={education.date} onChange={handleDateInput} />
             </div>
         </form>
     );
